@@ -253,7 +253,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 11-Dec-2022 at 20:32:10 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 17-Dec-2022 at 13:41:16 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -269,132 +269,146 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>13 tests ran in 15.53 seconds. </p>
+    <p>13 tests ran in 24.45 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">10 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">3 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
         <tr>
           <th class="sortable result initial-sort" col="result">Result</th>
+          <th>description</th>
           <th class="sortable" col="name">Test</th>
           <th class="sortable" col="duration">Duration</th>
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
-          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+          <th colspan="5">No results found. Try to check the filters</th></tr></thead>
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">lesson21_task1.py::test_cookies_block_height</td>
-          <td class="col-duration">4.97</td>
+          <td>Cookies block height check</td>
+          <td class="col-name">lesson24_task1.py::test_cookies_block_height</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
-            <div class="log">def test_cookies_block_height():<br/>        cookies_block = driver.find_element(By.CSS_SELECTOR, &#x27;div.cookies&#x27;)<br/>&gt;       assert cookies_block.value_of_css_property(&#x27;height&#x27;) == &quot;155.2px&quot;, &quot;Cookies block height test fail&quot;<br/><span class="error">E       AssertionError: Cookies block height test fail</span><br/><span class="error">E       assert &#x27;156px&#x27; == &#x27;155.2px&#x27;</span><br/><span class="error">E         - 155.2px</span><br/><span class="error">E         + 156px</span><br/><br/>lesson21_task1.py:24: AssertionError<br/></div></td></tr></tbody>
+          <td class="extra" colspan="5">
+            <div class="log">div_cookies = &#x27;div.cookies&#x27;, cookies_height = &#x27;155.2px&#x27;<br/><br/>    def test_cookies_block_height(div_cookies, cookies_height):<br/>        &#x27;&#x27;&#x27;Cookies block height check&#x27;&#x27;&#x27;<br/>&gt;       assert site.get_element_property(&quot;css&quot;, div_cookies, &quot;height&quot;) == cookies_height, &quot;Cookies block height test fail&quot;<br/><span class="error">E       AssertionError: Cookies block height test fail</span><br/><span class="error">E       assert &#x27;156px&#x27; == &#x27;155.2px&#x27;</span><br/><span class="error">E         - 155.2px</span><br/><span class="error">E         + 156px</span><br/><br/>lesson24_task1.py:15: AssertionError<br/></div></td></tr></tbody>
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">lesson21_task1.py::test_email_width</td>
+          <td>email input width check</td>
+          <td class="col-name">lesson24_task1.py::test_email_width</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
-            <div class="log">def test_email_width():<br/>        email_input = driver.find_element(By.XPATH, &#x27;//*[@id=&quot;app&quot;]/div[1]/div[2]/div[4]/div/div[1]/div/div[3]/form/div[1]/div[3]/div[1]/input&#x27;)<br/>&gt;       assert email_input.value_of_css_property(&quot;width&quot;) == &quot;133.688px&quot;, &quot;Email input width test fail&quot;<br/><span class="error">E       AssertionError: Email input width test fail</span><br/><span class="error">E       assert &#x27;123.688px&#x27; == &#x27;133.688px&#x27;</span><br/><span class="error">E         - 133.688px</span><br/><span class="error">E         ?  ^</span><br/><span class="error">E         + 123.688px</span><br/><span class="error">E         ?  ^</span><br/><br/>lesson21_task1.py:62: AssertionError<br/></div></td></tr></tbody>
+          <td class="extra" colspan="5">
+            <div class="log">email_input = &#x27;//*[@id=&quot;app&quot;]/div[1]/div[2]/div[4]/div/div[1]/div/div[3]/form/div[1]/div[3]/div[1]/input&#x27;, email_domain_width = &#x27;133.688px&#x27;<br/><br/>    def test_email_width(email_input, email_domain_width):<br/>        &#x27;&#x27;&#x27;email input width check&#x27;&#x27;&#x27;<br/>&gt;       assert site.get_element_property(&quot;xpath&quot;, email_input, &quot;width&quot;) == email_domain_width, &quot;Email input width test fail&quot;<br/><span class="error">E       AssertionError: Email input width test fail</span><br/><span class="error">E       assert &#x27;123.688px&#x27; == &#x27;133.688px&#x27;</span><br/><span class="error">E         - 133.688px</span><br/><span class="error">E         ?  ^</span><br/><span class="error">E         + 123.688px</span><br/><span class="error">E         ?  ^</span><br/><br/>lesson24_task1.py:59: AssertionError<br/></div></td></tr></tbody>
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">lesson21_task1.py::test_domain_width</td>
-          <td class="col-duration">2.10</td>
+          <td>domain input width check</td>
+          <td class="col-name">lesson24_task1.py::test_domain_width</td>
+          <td class="col-duration">16.28</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
-            <div class="log">def test_domain_width():<br/>        domain_input = driver.find_element(By.XPATH, &#x27;//*[@id=&quot;app&quot;]/div[1]/div[2]/div[4]/div/div[1]/div/div[3]/form/div[1]/div[3]/div[3]/input&#x27;)<br/>&gt;       assert domain_input.value_of_css_property(&quot;width&quot;) == &quot;133.688px&quot;, &quot;Domain input width test fail&quot;<br/><span class="error">E       AssertionError: Domain input width test fail</span><br/><span class="error">E       assert &#x27;123.688px&#x27; == &#x27;133.688px&#x27;</span><br/><span class="error">E         - 133.688px</span><br/><span class="error">E         ?  ^</span><br/><span class="error">E         + 123.688px</span><br/><span class="error">E         ?  ^</span><br/><br/>lesson21_task1.py:70: AssertionError<br/></div></td></tr></tbody>
+          <td class="extra" colspan="5">
+            <div class="log">domain_input = &#x27;//*[@id=&quot;app&quot;]/div[1]/div[2]/div[4]/div/div[1]/div/div[3]/form/div[1]/div[3]/div[3]/input&#x27;, email_domain_width = &#x27;133.688px&#x27;<br/><br/>    def test_domain_width(domain_input, email_domain_width):<br/>        &#x27;&#x27;&#x27;domain input width check&#x27;&#x27;&#x27;<br/>&gt;       assert site.get_element_property(&quot;xpath&quot;, domain_input, &quot;width&quot;) == email_domain_width, &quot;Domain input width test fail&quot;<br/><span class="error">E       AssertionError: Domain input width test fail</span><br/><span class="error">E       assert &#x27;123.688px&#x27; == &#x27;133.688px&#x27;</span><br/><span class="error">E         - 133.688px</span><br/><span class="error">E         ?  ^</span><br/><span class="error">E         + 123.688px</span><br/><span class="error">E         ?  ^</span><br/><br/>lesson24_task1.py:68: AssertionError<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_cookies_block_bg</td>
+          <td>Cookies background color check</td>
+          <td class="col-name">lesson24_task1.py::test_cookies_block_bg</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_logo_height</td>
+          <td>logo height check</td>
+          <td class="col-name">lesson24_task1.py::test_logo_height</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_logo_width</td>
+          <td>logo width check</td>
+          <td class="col-name">lesson24_task1.py::test_logo_width</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_login_form_bg</td>
-          <td class="col-duration">0.01</td>
+          <td>login form background color check</td>
+          <td class="col-name">lesson24_task1.py::test_login_form_bg</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_login_form_font_size</td>
+          <td>login form font size check</td>
+          <td class="col-name">lesson24_task1.py::test_login_form_font_size</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_login_form_font_family</td>
+          <td>login form font family check</td>
+          <td class="col-name">lesson24_task1.py::test_login_form_font_family</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_password_height</td>
+          <td>password input height check</td>
+          <td class="col-name">lesson24_task1.py::test_password_height</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_password_width</td>
+          <td>password input width check</td>
+          <td class="col-name">lesson24_task1.py::test_password_width</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_email_height</td>
+          <td>email input height check</td>
+          <td class="col-name">lesson24_task1.py::test_email_height</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">lesson21_task1.py::test_domain_height</td>
-          <td class="col-duration">0.01</td>
+          <td>domain input height check</td>
+          <td class="col-name">lesson24_task1.py::test_domain_height</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
-          <td class="extra" colspan="4">
+          <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>
